@@ -16,5 +16,5 @@ use Bluerock\Sellsy\Entities\Entity;
 class Interval extends Entity
 {
     public ?string $type;
-    public ?string $value;
+    public $value;
 }
