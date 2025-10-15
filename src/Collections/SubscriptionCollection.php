@@ -14,7 +14,7 @@ use Spatie\DataTransferObject\DataTransferObjectCollection;
  * @version 1.0
  * @access public
  *
- * @method \Bluerock\Sellsy\Entities\Company current
+ * @method \Bluerock\Sellsy\Entities\Subscription current
  */
 class SubscriptionCollection extends DataTransferObjectCollection implements EntityCollectionContract
 {
