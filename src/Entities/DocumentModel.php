@@ -27,7 +27,7 @@ class DocumentModel extends Entity
     /**
      * Subject of model
      */
-    public ?string $suject;
+    public ?string $subject;
 
     /**
      * Link to the pdf of document
