@@ -3,7 +3,9 @@
 namespace Bluerock\Sellsy\Api;
 
 use Bluerock\Sellsy\Entities\Subscription;
+use Bluerock\Sellsy\Entities\PaymentInstallment;
 use Bluerock\Sellsy\Collections\SubscriptionCollection;
+use Bluerock\Sellsy\Collections\PaymentInstallmentCollection;
 use Bluerock\Sellsy\Core\Response;
 
 /**
@@ -79,6 +81,26 @@ class SubscriptionsApi extends AbstractApi
         $response = $this->connection
             ->request('subscriptions')
             ->get($query);
+
+        return $this->prepareResponse($response);
+    }
+
+    /**
+     * Get all payment installments of subscriptions.
+     *
+     * @param array $query Query parameters.
+     *
+     * @return \Bluerock\Sellsy\Core\Response
+     * @see https://api.sellsy.com/doc/v2/#operation/get-subscriptions-payment-installments
+     */
+    public function paymentInstallments(array $query = []): Response
+    {
+        $response = $this->connection
+            ->request($this->appendQuery('subscriptions/payment-installments', $query))
+            ->get();
+
+        $this->entity     = PaymentInstallment::class;
+        $this->collection = PaymentInstallmentCollection::class;
 
         return $this->prepareResponse($response);
     }
