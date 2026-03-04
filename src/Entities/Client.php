@@ -121,4 +121,11 @@ abstract class Client extends Entity
      * <READONLY> Client owner from Sellsy.
      */
     public ?array $owner;
+
+    /**
+     * Embedded resources returned by Sellsy.
+     *
+     * @var object|null
+     */
+    public ?object $_embed = null;
 }
