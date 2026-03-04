@@ -139,7 +139,7 @@ class IndividualsApi extends AbstractApi implements Contracts\HasContactsApi, Co
     {
         $response = $this->connection
                         ->request($this->appendQuery('individuals/search', $query))
-                        ->post(compact('filters') + $query);
+                        ->post(compact('filters'));
 
         return $this->prepareResponse($response);
     }
